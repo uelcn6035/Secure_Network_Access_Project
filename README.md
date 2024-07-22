@@ -36,6 +36,10 @@ A Voice VLAN is configured for VoIP services. The configuration includes setting
 
 Please refer to the configuration files in this repository for detailed configuration commands.
 
+## License
+
+This project is free to use for conventional practices.
+
 ## Disclaimer
 
 This project is for educational purposes only. Please use caution when implementing these configurations in a production environment.
