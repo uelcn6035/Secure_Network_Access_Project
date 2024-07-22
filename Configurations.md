@@ -1,4 +1,5 @@
 ## Access Switches
+```bash
 vlan 10
 name production
 ex
@@ -41,6 +42,7 @@ switchport mode access
 switchport access vlan 40
 ```
 ## Distributed Switch 1
+```bash
 int g1/0/1
 no switchport
 ip add 172.30.1.137 255.255.255.252
@@ -75,6 +77,7 @@ switchport mode trunk
 ex
 ```
 ## Distributed Switch 2
+```bash
 int g1/0/1
 no switchport
 ip add 172.30.1.141 255.255.255.252
@@ -109,6 +112,7 @@ switchport mode trunk
 ex
 ```
 ## WLC
+```bash
 int g1/0/7
 switchport mode access
 switchport access vlan 40
@@ -155,6 +159,7 @@ ex
 ```
 ## Layer 3 Configuration - Routing
 ### Distributed Switch 1
+```bash
 HSRP & INTER-VLAN Routing:
 int vlan 10
 ip add 172.30.1.1 255.255.255.224
@@ -181,6 +186,7 @@ standby 40 ip 172.30.1.98
 ex
 ```
 ### Distributed Switch 2
+```bash
 HSRP & INTER-VLAN Routing:
 
 int vlan 10
@@ -209,6 +215,7 @@ ex
 ```
 ## Layer 3 Router Links
 ### ISP Gate(Router)
+```bash
 int gig0/0
 ip add 221.30.1.146 255.255.255.252
 no shut
@@ -220,6 +227,7 @@ no shut
 ex
 ```
 ### AWS CLOUD
+```bash
 int se0/3/0
 ip add 30.30.1.150 255.255.255.252
 no shut
@@ -232,6 +240,7 @@ ex
 ```
 ## Dynamic Routing Configuration
 ### Distribution switch 1
+```bash
 int g1/0/1
 ip routing
 router ospf 2
@@ -243,6 +252,7 @@ network 172.30.1.64 0.0.0.31 area 0
 network 172.30.1.96 0.0.0.31 area 0
 ```
 ### Distribution switch 2
+```bash
 int g1/0/1
 ip routing
 router ospf 2
@@ -254,6 +264,7 @@ network 172.30.1.64 0.0.0.31 area 0
 network 172.30.1.96 0.0.0.31 area 0
 ```
 ### FIREWALL OSPF
+```bash
 router ospf 2
 router-id 1.1.1.1
 network 172.30.1.136 255.255.255.252 area 0
@@ -262,6 +273,7 @@ network 221.30.1.144 255.255.255.252 area 0
 ex
 ```
 ### ISP CORE
+```bash
 router ospf 2
 router-id 5.5.5.5
 network 221.30.1.144 0.0.0.3 area 0
@@ -269,6 +281,7 @@ network 172.30.1.148 0.0.0.3 area 0
 ex
 ```
 ### IBM Cloud Instance
+```bash
 router ospf 2
 router-id 4.4.4.4
 network 30.20.172.16 0.0.0.7 area 0
@@ -276,6 +289,7 @@ network 172.30.1.148 0.0.0.3 area 0
 ex
 ```
 ### FIREWALL OSPF
+```bash
 router ospf 2
 router-id 1.1.1.1
 network 172.30.1.136 255.255.255.248 area 0
