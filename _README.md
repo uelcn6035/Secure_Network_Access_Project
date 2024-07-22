@@ -1,6 +1,5 @@
 # Secure Network Access Project
 
-
 This repository contains the configuration for a secure network access project implemented using Cisco Packet Tracer.
 
 ## Project Overview
